@@ -1,0 +1,160 @@
+.backgroundCard1 {
+    background-image: url('../assets/images/GoldCreditCardFrente.jpg');
+    background-size: cover;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    
+  }
+
+  .backgroundCardDorso1{
+    background-image: url('../assets/images/GoldCreditCardDorso.jpg');
+      background-size: cover;
+      width: 400px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 25px;
+  }
+
+  .backgroundCard2{
+    background-image: url('../assets/images/CreditCardTitaniumFrente.jpg');
+    background-size: cover;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+  }
+
+  .backgroundCardDorso2{
+    background-image: url('../assets/images/CreditCardTitaniumDorso.jpg');
+      background-size: cover;
+      width: 400px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 25px;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: center;
+    width: 83%;
+    height: 30vw; /* Ajusta el alto del carrousel */
+     overflow: hidden;/* Oculta cualquier contenido que sobrepase el alto */
+  }
+  
+  .carousel-image {
+    justify-content: center;
+    object-fit: contain;
+    position: absolute;
+    width: 80%;
+    height: 30vw;
+    object-fit: cover;
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .carousel-image:not(:first-child) {
+    opacity: 0;
+  }
+  
+  #menu {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    color: #ffffff;
+  }
+  
+  #menu::before {
+    content: "≡";
+    color: white;
+  }
+  
+  nav {
+    background: linear-gradient(90deg, #e08b1c 0%, #e96c05 100%);
+    color: white;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    
+  }
+  
+  nav img {
+    display: block;
+    margin: 0 auto;
+  } 
+  
+  .navLinks {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+  
+  .navLinksList {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+
+  ul{
+    color: white;
+  }
+  
+  .navLinks li {
+    display: block;
+    color: white;
+  }
+  
+  .show  {
+    display: flex; 
+  }  
+  
+  #menu.show::before {
+    content: "X";
+  }
+  
+  /* Estilos para medidas laptop y tablets */
+@media (min-width: 426px) {
+  .navLinksList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #menu {
+    display: none;
+  }
+}
+
+/* Estilos para medidas móviles */
+@media (max-width: 425px) {
+  .navLinksList {
+    display: none;
+  }
+  #menu {
+    display: block;
+  }
+  #menu.show::before {
+    content: "X";
+  }
+  .show {
+    display: flex;
+  }
+}

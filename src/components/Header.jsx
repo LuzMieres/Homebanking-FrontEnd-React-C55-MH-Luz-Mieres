@@ -2,8 +2,7 @@ import React from 'react'
 
 function Header(props) {
   return (
-    <header className='flex flex-col items-start h-screen'>
-      <img src="" alt="" />
+    <header className='flex flex-col items-center justify-center h-screen w-[17%]'>
       {props.children}
     </header>
   )

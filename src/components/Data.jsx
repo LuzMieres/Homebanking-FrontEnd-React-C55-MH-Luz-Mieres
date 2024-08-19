@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-function DataClients({to}) {
+function Data({to}) {
     const [clients, setClients] = useState([]);
     
 
@@ -30,4 +30,4 @@ function DataClients({to}) {
     );
 }
 
-export default DataClients;
+export default Data;

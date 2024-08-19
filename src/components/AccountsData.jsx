@@ -22,37 +22,31 @@ function AccountsData() {
     }, []);
 
     return (
-        <div className='flex flex-col gap-5 '>
-            <Link to='/transactions'>
-                {accounts.length > 0 && (
-                    <div className='flex flex-col pl-4 justify-around text-xl font-bold pt-2 border border-white bg-orange-300 w-80 h-60 rounded-2xl'>
-                        <p>Account Number: {accounts[0].number}</p>
-                        <div className='flex w-full flex-wrap justify-center'>
-                            <p className='w-full pl-4 text-xl font-bold'>Balance: </p>
-                            <p className='text-3xl'> ${accounts[0].balance}</p>
-                        </div>
-                        <p>Creation date: {accounts[0].creationDate}</p>
+        <div className='flex flex-wrap justify-center gap-5'>
+            {accounts.length > 0 && (
+                <div className='flex flex-col pl-4 justify-around items-center text-xl font-bold pt-2 border border-white bg-gradient-to-r from-[#e08b1c] to-[#e96c05] w-[400px] h-[250px] rounded-2xl'>
+                    <p>Account Number: {accounts[0].number}</p>
+                    <div className='flex w-full flex-wrap justify-center'>
+                        <p className='w-full pl-4 text-xl font-bold'>Balance: </p>
+                        <p className='text-3xl'> ${accounts[0].balance}</p>
                     </div>
+                    <p>Creation date: {accounts[0].creationDate}</p>
+                    <Link to='/transactions'><button className='bg-gradient-to-r from-[#e08b1c] to-[#e96c05] text-white border border-white'>Transactions</button></Link>
+                </div>
 
-                )}
-
-            </Link>
-            <div>
-                {accounts.length > 0 && (
-                    <div className='flex flex-col pl-4 justify-around text-xl font-bold pt-2 border border-white bg-orange-300 w-80 h-60 rounded-2xl'>
-                        <p>Account Number: {accounts[1].number}</p>
-                        <div className='flex w-full flex-wrap justify-center'>
-                            <p className='w-full pl-4 text-xl font-bold'>Balance: </p>
-                            <p className='text-3xl'> ${accounts[1].balance}</p>
-                        </div>
-                        <p>Creation date: {accounts[1].creationDate}</p>
+            )}
+            {accounts.length > 0 && (
+                <div className='flex flex-col pl-4 justify-around items-center text-xl font-bold pt-2 border border-white bg-gradient-to-r from-[#e08b1c] to-[#e96c05] w-[400px] h-[250px] rounded-2xl'>
+                    <p>Account Number: {accounts[1].number}</p>
+                    <div className='flex w-full flex-wrap justify-center'>
+                        <p className='w-full pl-4 text-xl font-bold'>Balance: </p>
+                        <p className='text-3xl'> ${accounts[1].balance}</p>
                     </div>
-
-                )}
-
-            </div>
+                    <p>Creation date: {accounts[1].creationDate}</p>
+                    <Link to='/transactions'><button className='bg-gradient-to-r from-[#e08b1c] to-[#e96c05] text-white border border-white'>Transactions</button></Link>
+                </div>
+            )}
         </div>
-
     )
 }
 

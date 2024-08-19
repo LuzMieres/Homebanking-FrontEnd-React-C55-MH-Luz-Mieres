@@ -1,10 +1,11 @@
 import React from 'react'
-import Data from '../components/data'
+import TransactionsData from '../components/TransactionsData'
 
 function Transactions() {
   return (
-    <div className='min-h-screen'>Transactions
-      <Data></Data>
+    <div className='min-h-screen w-[83%] flex flex-col items-center'>
+      <h2 className='text-3xl'>Your Transactions</h2>
+      <TransactionsData></TransactionsData>
     </div>
   )
 }

@@ -4,22 +4,22 @@ import '../styles/style.css';
 
 
 function LoansData() {
-  const [clients, setClients] = useState([]);
+  const [accounts, setAccounts] = useState([]);
 
-  function obtenerClients() {
-    axios.get("http://localhost:8080/api/clients/")
+  function obtenerAccounts() {
+    axios.get("http://localhost:8080/api/accounts/")
       .then(response => {
-        const clientData = response.data;
-        console.log(clientData);
+        const accountData = response.data;
+        console.log(accountData);
 
-        setClients(clientData);
+        setAccounts(accountData);
       })
       .catch(error => {
         console.error("There was a problem with the request:", error);
       });
 
   } useEffect(() => {
-    obtenerClients();
+    obtenerAccounts();
   }, []);
   function formatAmountToARS(amount) {
     return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(amount);
@@ -27,19 +27,19 @@ function LoansData() {
   return (
     <>
       <div className="flex flex-wrap gap-5 m-5 justify-center">
-        {clients.map(client => (
-          <div key={client.id} className="flex justify-around flex-col w-full gap-5">
-            {client.loans.map(loan => (
+        {accounts.map(account => (
+          <div key={account.id} className="flex justify-around items-center flex-col w-full gap-5">
+            {account.transactions.map(transaction => (
               <table className='border w-[700px] h-[100px] text-center text-3xl'>
                 <tr className='border'>
-                  {Object.keys(loan).filter(key => key !== 'loanid' && key !== 'id').map(key => (
+                  {Object.keys(transaction).filter(key => key !== 'accountid' && key !== 'id').map(key => (
                     <th className='border w-[200px]' key={key}>{key.toUpperCase()}</th>
                   ))}
                 </tr>
                 <tr>
-                  {Object.keys(loan).filter(key => key !== 'loanid' && key !== 'id').map(key => (
+                  {Object.keys(transaction).filter(key => key !== 'accountid' && key !== 'id').map(key => (
                     <td className='border' key={key}>
-                      {key === 'amount' ? formatAmountToARS(loan[key]) : loan[key]}
+                      {key === 'amount' ? formatAmountToARS(transaction[key]) : transaction[key]}
                     </td>
                   ))}
                 </tr>
