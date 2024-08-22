@@ -89,9 +89,9 @@ function NewCardData() {
 
   return (
     <div>
-      <div className='backgroundNewCard flex items-center justify-center w-[800px] h-[800px] pb-32'>
-        <img className='w-[500px] h-[500px]' src="newCard.png" alt="newCard" />
-        <form onSubmit={handleSubmit} className='flex flex-col items-center p-10 gap-20 border-2 border-gray-700 mb-20 w-[450px] h-[400px]'>
+      <div className='backgroundNewCard flex items-center justify-center w-[800px] h-[800px] pb-32 mr-20'>
+        <img className='w-[550px] h-[550px] bg-white' src="newCard.png" alt="newCard" />
+        <form onSubmit={handleSubmit} className='bg-white flex flex-col items-center p-10 gap-20 w-[550px] h-[550px]'>
           <div>
             <p className='text-gray-700 text-2xl'>Selected card type</p>
             <select className='w-96 bg-custom-gradient text-white text-2xl' id='cardType' name="cardType" value={formData.cardType} onChange={handleInputChange}>
@@ -107,7 +107,7 @@ function NewCardData() {
               <option className='w-96 bg-custom-gradient text-white text-2xl' value="TITANIUM">Titanium</option>
             </select>
           </div>
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded">Create Card</button>
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded">Get a Card</button>
         </form>
       </div>
     </div>

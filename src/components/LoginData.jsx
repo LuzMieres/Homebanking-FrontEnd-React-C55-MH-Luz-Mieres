@@ -7,14 +7,14 @@ const navigate = useNavigate();
 function handleSubmit(event) {
     event.preventDefault();
 
-    navigate('/'); // Redirigir a la página de cuentas
+    navigate('/');
 }
 
     return (
         <div>
-            <div className='backgroundNewCard flex items-center justify-center w-[800px] h-[800px] pb-28'>
+            <div className='backgroundNewCard flex items-center justify-center w-[800px] h-[800px] pb-28 mr-32'>
                 <img className='w-[550px] h-[550px]' src="login.png" alt="register" />
-                <form onSubmit={handleSubmit} className='bg-white flex flex-col items-center p-2 gap-14 border-2 border-gray-700 w-[550px] h-[550px]'>
+                <form onSubmit={handleSubmit} className='bg-white flex flex-col items-center p-2 gap-14 w-[550px] h-[550px]'>
                     <img className='w-20 h-20' src="banking-icon.svg" alt="banking-icon" />
                     <div>
                         <div>

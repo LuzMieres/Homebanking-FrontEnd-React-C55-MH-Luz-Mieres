@@ -8,8 +8,7 @@ export const newLoansArray = []; // Nuevo array para almacenar los nuevos prést
 
 function NewLoanData() {
   const [client, setClient] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
   const [formData, setFormData] = useState({
     number: 'VIN001',
     sourceAccount: '',
@@ -79,23 +78,15 @@ function NewLoanData() {
     navigate('/loans');
   }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
   if (!client || !client.accounts) {
     return <div>No accounts found.</div>;
   }
 
   return (
-    <div className='flex items-center justify-center w-[800px] h-[800px] pb-32'>
+    <div className='flex items-center justify-center w-[800px] h-[800px] pb-28 mr-32'>
       <div className='flex items-center justify-center w-[900px] h-[900px] pb-28'>
         <img className='w-[550px] h-[550px]' src="newLoan.png" alt="newLoan" />
-        <form onSubmit={handleSubmit} className='bg-white flex flex-col items-center p-2 gap-5 border-2 border-gray-700 w-[500px] h-[550px]'>
+        <form onSubmit={handleSubmit} className='bg-white flex flex-col items-center p-2 gap-5 w-[500px] h-[550px]'>
           <div>
             <p className='text-gray-700 text-2xl'>Selected loan</p>
             <select className='w-96 bg-custom-gradient text-white text-2xl' id='number' name="number" value={formData.name} onChange={handleLoanChange}>
@@ -128,7 +119,7 @@ function NewLoanData() {
               ))}
             </select>
           </div>
-          <button type="submit" className='p-2 bg-blue-500 text-white rounded'>Submit</button>
+          <button type="submit" className='p-2 bg-blue-500 text-white rounded'>Get a Loan</button>
         </form>
       </div>
     </div>

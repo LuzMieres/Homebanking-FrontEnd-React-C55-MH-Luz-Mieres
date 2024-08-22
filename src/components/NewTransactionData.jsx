@@ -78,10 +78,10 @@ function NewTransactionData() {
   }
 
   return (
-    <div className='flex items-center justify-center w-[800px] h-[800px] pb-32'>
-      <div className='flex items-center justify-center w-[800px] h-[800px] pb-28'>
+    <div className='flex items-center justify-center w-[800px] h-[800px] pb-32 mr-32'>
+      <div className='flex items-center justify-center w-[800px] h-[800px] pb-24'>
         <img className='w-[550px] h-[550px]' src="newTransaction.png" alt="newTransaction" />
-        <form onSubmit={handleSubmit} className='bg-white flex flex-col items-center p-2 gap-5 border-2 border-gray-700 w-[550px] h-[550px]'>
+        <form onSubmit={handleSubmit} className='bg-white flex flex-col items-center p-2 gap-5 w-[550px] h-[550px]'>
           <div>
             <label className='text-xl text-gray-700 mr-4' htmlFor="own">Own
               <input type="radio" name="accountType" id="own" value="Own" checked={formData.accountType === 'Own'} onChange={handleInputChange} />
@@ -106,7 +106,7 @@ function NewTransactionData() {
             <p className='text-gray-700 text-2xl'>Description</p>
             <textarea className='w-96 h-24 bg-custom-gradient text-white text-2xl' name="description" id="description" value={formData.description} onChange={handleInputChange} cols="10" rows="100"></textarea>
           </div>
-          <button type="submit" className='p-2 bg-blue-500 text-white rounded'>Submit</button>
+          <button type="submit" className='p-2 bg-blue-500 text-white rounded'>Send</button>
         </form>
       </div>
     </div>
