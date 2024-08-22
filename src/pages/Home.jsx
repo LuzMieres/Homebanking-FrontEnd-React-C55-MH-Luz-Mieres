@@ -1,16 +1,15 @@
-import React from 'react'
-import Carrousel from '../components/Carrousel'
-
+import React from 'react';
+import Carrousel from '../components/Carrousel';
+import '../styles/style.css';
 
 function Home() {
   return (
     <>
-      <main className='min-h-screen w-[83%] flex flex-col items-center'>
-        <h1 className='text-white text-3xl font-bold text-center'>Welcome to new bank MindHub</h1>
-        <Carrousel></Carrousel>
+      <main className='main h-[60vh] w-full sm:w-[100%] flex flex-col items-center'>
+        <Carrousel />
       </main>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

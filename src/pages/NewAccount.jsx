@@ -1,8 +1,8 @@
 import React from 'react';
-
-function NewAccounts() {
+import '../styles/style.css'
+function NewAccount() {
     return (
-        <div className='min-h-screen w-[83%] flex flex-wrap items-center ml-5'>
+        <div className='main min-h-screen w-[100%] flex flex-col items-center'>
           <div >
             <h2 className='text-3xl'>Aply for a New Account</h2>
           </div>
@@ -14,4 +14,4 @@ function NewAccounts() {
 }
 
 
-export default NewAccounts
+export default NewAccount

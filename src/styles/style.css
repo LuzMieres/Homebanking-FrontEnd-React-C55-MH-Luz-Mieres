@@ -1,160 +1,335 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: var(--custom-gradient);
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.main {
+  padding: 1rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: var(--custom-gradient);
+}
+
+.footer p, .footer a {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
 .backgroundCard1 {
-    background-image: url('../assets/images/GoldCreditCardFrente.jpg');
-    background-size: cover;
-    width: 400px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 25px;
-    
+  background-image: url('../assets/images/GoldCreditCardFrente.jpg');
+}
+
+.backgroundCardDorso1 {
+  background-image: url('../assets/images/GoldCreditCardDorso.jpg');
+}
+
+.backgroundCard2 {
+  background-image: url('../assets/images/CreditCardTitaniumFrente.jpg');
+}
+
+.backgroundCardDorso2 {
+  background-image: url('../assets/images/CreditCardTitaniumDorso.jpg');
+}
+.backgroundCard3{
+  background-image: url('../assets/images/CreditCardSilverFrente.jpg');
+}
+
+.backgroundCardDorso3{
+  background-image: url('../assets/images/CreditCardSilverDorso.jpg');
+}
+
+.card-container {
+  perspective: 100%;
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-container.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.backgroundCard1,
+.backgroundCardDorso1,
+.backgroundCard2,
+.backgroundCardDorso2,
+.backgroundCard3,
+.backgroundCardDorso3 {
+  background-size: cover;
+  width: 400px;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+}
+
+.backgroundCard1 .content,
+.backgroundCard2 .content,
+.backgroundCard3 .content {
+  position: absolute;
+  bottom: 70px;
+  left: 20px;
+} 
+
+#menu::before {
+  content: "≡";
+  color: rgb(51, 51, 51);
+}
+
+#menu.show::before {
+  content: "X";
+  color: rgb(51, 51, 51);
+}
+
+#menu {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  color: rgb(51, 51, 51);
+  z-index: 2;
+}
+
+section{
+  height: 100vh;
+  margin-bottom: 10%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  margin-bottom: 10%;
+}
+
+.section.show {
+  transform: translateX(0);
+}
+
+#root {
+  background: linear-gradient(rgba(255, 255, 255, 0.466), rgba(255, 255, 255, 0.466)),
+    url('../assets/images/homebankingjpg-background.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 150vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  height: 50vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.carousel-large {
+  width: 100vw;
+}
+
+.carousel-small {
+  width: 100vw;
+}
+
+.carousel-image {
+  justify-content: center;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 98.9%;
+  height: 50vh;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.carousel-image:not(:first-child) {
+  opacity: 0;
+}
+
+.header {
+  height: 30vh;
+  position: relative;
+}
+
+.navLinksList {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.nav {
+  background: linear-gradient(90deg, #1cb5e0 0%, #5665ee 100%);
+  padding: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.navLinks {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+}
+
+.navLinks li {
+  display: block;
+}
+
+.navLinks Link {
+  display: block;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: rgb(56, 49, 49);
+  font-weight: 700;
+  transition: 0.5s;
+  font-size: clamp(1rem, 2vmin, 1.5rem);
+  border-radius: 20px;
+}
+
+.navLinks .current {
+  color: rgb(15, 15, 15);
+  background-color: var(--azul);
+}
+
+.navLinks a:hover,
+.navigation a:active {
+  color: rgb(51, 51, 51);
+  background-color: var(--azul);
+  border-radius: 20px;
+}
+
+.show .navLinksList {
+  display: flex;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  top: 90%;
+  margin-top: 4%;
+}
+/* Media queries para pantallas medianas */
+@media (min-width: 768px) {
+  .header img {
+    width: 100px;
+    height: 100px;
   }
 
-  .backgroundCardDorso1{
-    background-image: url('../assets/images/GoldCreditCardDorso.jpg');
-      background-size: cover;
-      width: 400px;
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      border-radius: 25px;
+  .header h1 {
+    font-size: 2.5rem;
   }
 
-  .backgroundCard2{
-    background-image: url('../assets/images/CreditCardTitaniumFrente.jpg');
-    background-size: cover;
-    width: 400px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 25px;
+  .footer p, .footer a {
+    font-size: 1.5rem;
   }
 
-  .backgroundCardDorso2{
-    background-image: url('../assets/images/CreditCardTitaniumDorso.jpg');
-      background-size: cover;
-      width: 400px;
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      border-radius: 25px;
+  .section {
+    width: 30vw;
   }
 
-  .carousel {
-    display: flex;
-    justify-content: center;
-    width: 83%;
-    height: 30vw; /* Ajusta el alto del carrousel */
-     overflow: hidden;/* Oculta cualquier contenido que sobrepase el alto */
-  }
-  
-  .carousel-image {
-    justify-content: center;
-    object-fit: contain;
+  .footer {
     position: absolute;
-    width: 80%;
-    height: 30vw;
-    object-fit: cover;
-    transition: opacity 1.5s ease-in-out;
-  }
-
-  .carousel-image:not(:first-child) {
-    opacity: 0;
-  }
-  
-  #menu {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 0.5rem 0.75rem;
-    color: #ffffff;
-  }
-  
-  #menu::before {
-    content: "≡";
-    color: white;
-  }
-  
-  nav {
-    background: linear-gradient(90deg, #e08b1c 0%, #e96c05 100%);
-    color: white;
-    padding: 1rem;
-    flex-direction: column;
-    gap: 0.5rem;
-    position: relative;
-    
-  }
-  
-  nav img {
-    display: block;
-    margin: 0 auto;
-  } 
-  
-  .navLinks {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
     width: 100%;
-    text-align: center;
-    color: white;
-  }
-  
-  .navLinksList {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-  }
-
-  ul{
-    color: white;
-  }
-  
-  .navLinks li {
-    display: block;
-    color: white;
-  }
-  
-  .show  {
-    display: flex; 
-  }  
-  
-  #menu.show::before {
-    content: "X";
-  }
-  
-  /* Estilos para medidas laptop y tablets */
-@media (min-width: 426px) {
-  .navLinksList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #menu {
-    display: none;
+    bottom: 0;
   }
 }
 
-/* Estilos para medidas móviles */
-@media (max-width: 425px) {
-  .navLinksList {
-    display: none;
+/* Media queries para pantallas grandes */
+@media (min-width: 1024px) {
+  .header {
+    justify-content: space-between;
   }
-  #menu {
-    display: block;
+
+  .header img {
+    width: 150px;
+    height: 150px;
   }
-  #menu.show::before {
-    content: "X";
+
+  .header h1 {
+    font-size: 3rem;
   }
-  .show {
-    display: flex;
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .footer p, .footer a {
+    font-size: 15px;
+  }
+
+
+
+  .section {
+    width: 20vw;
   }
 }
